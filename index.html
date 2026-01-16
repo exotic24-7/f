@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>flowr</title>
+    <link rel="icon" type="image/png" href="/gfx/favicon.ico?v=8e0ac734" sizes="32x32">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport" content="user-scalable=no, width=device-width, height=device-height, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
+
+    <meta name="application-name" content="flowr.fun">
+    <meta name="description" content="Welcome to flowr, an online multiplayer game! Battle enemies and seek the rarest petals to add to your collection!">
+    <meta name="msapplication-TileColor" content="#181818">
+    <meta name="theme-color" content="#181818">
+
+    <link href="style.css?v=8e0ac734" rel="stylesheet" type="text/css" type='text/css'/>
+    <script src="msgpackr.js?v=8e0ac734"></script>
+    <!-- hCaptcha removed for singleplayer mode -->
+  </head>
+  <body>
+    <div class="loader">Loading...</div>
+
+    <div class="login-menu hidden">
+      <div class="input-area">
+        <div class="title login-title" stroke="Create Account"></div>
+        <div class="username-label" stroke="Username"></div>
+        <input class="textbox username" type="text" tabindex="-1" maxlength="16" autocomplete="off" spellcheck="false">
+        <div class="spacer"></div>
+        <div class="password-label" stroke="Password"></div>
+        <input class="textbox password" type="password" tabindex="-1" autocomplete="off" spellcheck="false">
+        <!--<div class="betakey-label" stroke="Beta Key"></div>
+        <input class="textbox betakey" type="text" tabindex="-1" autocomplete="off" spellcheck="false">-->
+
+        <div class="btn login-switch-btn">
+          <span stroke="Switch to Login" class="login-switch-text"></span>
+        </div>
+        <div class="btn send-btn">
+          <span stroke="Create Account" class="send-text"></span>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu">
+      <div class="grid">
+        <div class="nick-info" stroke="This pretty flower is called..."></div>
+        <input class="textbox nickname" type="text" tabindex="-1" maxlength="16" autocomplete="off" spellcheck="false">
+        <div class="btn play-btn">
+          <span stroke="Play" class="play-text"></span>
+        </div>
+      </div>
+      <div class="links">
+        <div id="settingsButton">
+          <img src="gfx/gear.png?v=8e0ac734" draggable="false" width="35" height="35">
+        </div>
+        <div id="discordButton">
+          <a href="https://discord.gg/wJJPU9c6zW" target="_blank" title="Join our Community!">
+            <img src="gfx/discord.png?v=8e0ac734" draggable="false" width="35" height="35">
+          </a>
+        </div>
+        <!-- div id="editorButton">
+          <a href="https://flowr.fun/editor" target="_blank" title="Check out the Editor!">
+            <img id="editorImg" src="gfx/hammer.svg?v=8e0ac734" draggable="false" width="32" height="32">
+          </a>
+        </div-->
+        <div id="changelogButton">
+          <img src="gfx/scroll.png?v=8e0ac734" draggable="false" width="24" height="24">
+        </div>
+        
+        <!-- <div id="florrButton">
+          <a href="https://florr.io/" target="_blank" title="Check out the game this was based on, florr.io!">
+            <img id="editorImg" src="gfx/flower.png?v=8e0ac734" draggable="false" width="32" height="32">
+          </a>
+        </div> -->
+        
+      </div>
+      <div class="globalInventory">
+        <input id="petalsearch" class="textbox dummy-input" type="text" tabindex="-2" maxlength="20" autocomplete="off" spellcheck="false">
+      </div>
+
+    </div>
+
+    <!-- captcha removed for singleplayer mode -->
+
+    <div class="chatContainer hidden">
+      <input class="chat" type="text" autocomplete="off" spellcheck="false" maxlength="300"> <!--placeholder="Type here to chat!"-->
+      <div class="chat-div">
+      </div>
+    </div>
+    
+      
+    <canvas id="canvas" width="1280" height="720" style="z-index: -1"></canvas>
+    
+    <!-- socket.io removed for singleplayer mode -->
+    <script src="constants.js?v=8e0ac734"></script>
+    <script src="systems/asc.js?v=8e0ac734"></script>
+    <script src="systems/characterSelector.js?v=8e0ac734"></script>
+    <script src="systems/input.js?v=8e0ac734"></script>
+    <script src="systems/deadMenu.js?v=8e0ac734"></script>
+    <script src="systems/streakMenu.js?v=8e0ac734"></script>
+    <script src="petalContainer.js?v=8e0ac734"></script>
+    <script src="systems/manaBar.js?v=8e0ac734"></script>
+    <script src="systems/levelBar.js?v=8e0ac734"></script>
+    <script src="systems/menu.js?v=8e0ac734"></script>
+    <script src="util.js?v=8e0ac734"></script>
+    <script src="systems/inventory.js?v=8e0ac734"></script>
+    <script src="systems/squad.js?v=8e0ac734"></script>
+    <script src="enemy.js?v=8e0ac734"></script>
+    <script src="systems/enemyBox.js?v=8e0ac734"></script>
+    <script src="petal.js?v=8e0ac734"></script>
+    <script src="flower.js?v=8e0ac734"></script>
+    <script src="systems/runGame.js?v=8e0ac734"></script>
+    <script src="systems/processGameMessage.js?v=8e0ac734"></script>
+    <script src="systems/processMenuMessage.js?v=8e0ac734"></script>
+    <script src="systems/collectedMenu.js?v=8e0ac734"></script>
+    <script src="systems/room.js?v=8e0ac734"></script>
+    <script src="game.js?v=8e0ac734"></script>
+    <script src="renderGame.js?v=8e0ac734"></script>
+    <script src="systems/globalInventory.js?v=8e0ac734"></script>
+    <script src="systems/craftingMenu.js?v=8e0ac734"></script>
+    <script src="systems/mobGallery.js?v=8e0ac734"></script>
+    <script src="systems/changelog.js?v=8e0ac734"></script>
+    <script src="render.js?v=8e0ac734"></script>
+    <script src="sharedWithEditor.js?v=8e0ac734"></script>
+    <script src="stats.js?v=8e0ac734"></script>
+    <script src="systems/importBiomeData.js?v=8e0ac734"></script>
+    <script src="systems/importEditorBiomes.js?v=8e0ac734"></script>
+    <script src="systems/biomeManager.js?v=8e0ac734"></script>
+    <script src="systems/statsBox.js?v=8e0ac734"></script>
+    <script src="systems/settingsMenu.js?v=8e0ac734"></script>
+    <script type="module" src="singleplayer/localServer.js"></script>
+    <script src="client.js?v=8e0ac734"></script>
+    <!-- account & shop systems removed/disabled for singleplayer -->
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9bf0875758dea087',t:'MTc2ODU5NzA4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script><script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9bf0875758dea087","version":"2025.9.1","r":1,"token":"63cecca1c6d7498cbd04c8b4c9939754","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+</body>
+</html>
